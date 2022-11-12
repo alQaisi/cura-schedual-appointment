@@ -1,0 +1,126 @@
+.container{
+    width: 95%;
+    max-width: 800px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+}
+.card{
+    border-radius:11px;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    display: flex;
+    align-items: flex-start;
+    gap:20px;
+}
+.img{
+    border-radius: 50%;
+}
+.info{
+    
+}
+.nameContainer{
+    font-size:1.25rem;
+    color: rgba(0, 0, 0, .75);
+}
+.name{
+    color: rgba(0, 0, 0, .8);
+    font-size: 1.5rem;
+}
+.title{
+    margin-right:5px;
+    text-decoration: underline;
+}
+.specialty{
+    margin-block: 0;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, .8);
+}
+.about{
+    font-weight: 500;
+    color: rgba(0, 0, 0, .75);
+    margin-block:10px;
+    font-size: .95rem;
+}
+.rating{
+    margin-block:0px 10px;
+}
+.rating svg{
+    font-size: 1.2rem;
+    color: rgb(255, 195, 83);
+}
+.scheduleContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap:3px;
+    width:80%;
+    text-align: center;
+}
+.dayContainer{
+    flex-grow: 1;
+    width:100%;
+    min-width:90px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 0px 0px 0px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+.timesContainer{
+    display: flex;
+    flex-direction:column;
+    gap: 2px;
+}
+.day{
+    background-color: royalblue;
+    color: white;
+    font-size: .95rem;
+    padding: 5px 0;
+    margin-bottom:2px;
+}
+.timesContainer span{
+    font-size: .85rem;
+    font-weight: 400;
+    margin: 5px 0;
+    color: rgba(0, 0, 0, .85);
+    cursor: pointer;
+}
+.timesContainer+button{
+    margin-top:12px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: royalblue;
+}
+.timesContainer+button:hover{
+    opacity: .75;
+}
+.unavailable{
+    text-decoration: line-through;
+    pointer-events: none;
+    opacity: .75;
+}
+.time{
+    transition: all .15s ease-out;
+}
+.time:hover{
+    color: royalblue;
+    font-weight: 700;
+}
+.icon{
+    color: royalblue;
+    font-size:1.55rem;
+    cursor:pointer;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+.icon:hover{
+    color: white;
+    background-color: royalblue;
+}
