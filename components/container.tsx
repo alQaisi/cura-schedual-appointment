@@ -13,7 +13,9 @@ function Container() {
     return (
         <div className={styles.container}>
             {
-                Children.toArray(doctorsData.map(doctorData=><DoctorCard {...doctorData}/>))
+                doctors.length==5
+                ?Children.toArray(doctorsData.map(doctorData=><DoctorCard {...doctorData}/>))
+                :<h1>Loading</h1>
             }
         </div>
     );
