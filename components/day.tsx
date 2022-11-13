@@ -33,7 +33,7 @@ function Day({day,date,availableHours,unavailableHours,showedTimes,handleClick,f
             <div className={styles.timesContainer}>
                 {TimesElements.slice(0,showedTimes)}
             </div>
-            {hoursTotal>6 && TimesElements.length>5
+            {hoursTotal>4 && TimesElements.length>4
             ?<button onClick={handleClick} className={styles.book+" "+(firstDay?styles.todayButton:"")}>{showedTimes<5?"More":"Less"}</button>
             :<button className={styles.book+" "+(firstDay?styles.todayButton:"")}>Book</button>
             }
