@@ -28,16 +28,25 @@ function Day({day,date,availableHours,unavailableHours,showedTimes,handleClick,f
         })
     }));
     return (
+        <>{ hoursTotal?
         <div key={Math.random()*55247} className={styles.dayContainer}>
-            <span className={styles.day+" "+(firstDay?styles.today:"")}>{firstDay?"Today":(day.slice(0,3)+" "+date.slice(0,2)+"/"+date.slice(3,5))}</span>
-            <div className={styles.timesContainer}>
-                {TimesElements.slice(0,showedTimes)}
-            </div>
-            {hoursTotal>4 && TimesElements.length>4
+            {
+                hoursTotal &&
+                <>
+                    <span className={styles.day+" "+(firstDay?styles.today:"")}>{firstDay?"Today":(day.slice(0,3)+" "+date.slice(0,2)+"/"+date.slice(3,5))}</span>
+                    <div className={styles.timesContainer}>
+                        {TimesElements.slice(0,showedTimes)}
+                    </div>
+                </>
+            }
+            {!hoursTotal && hoursTotal>4 && TimesElements.length>4
             ?<button onClick={handleClick} className={styles.book+" "+(firstDay?styles.todayButton:"")}>{showedTimes<5?"More":"Less"}</button>
             :<button className={styles.book+" "+(firstDay?styles.todayButton:"")}>Book</button>
             }
+            <button className={styles.book+" "+styles.todayButton+" "+styles.more+" "+styles.moreMain}>More</button>
         </div>
+        :<button className={styles.book+" "+styles.todayButton+" "+styles.more}>More</button>
+        }</>
     );
 }
 

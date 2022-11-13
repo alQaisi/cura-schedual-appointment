@@ -34,13 +34,17 @@ function ScheduleComponent({schedule}:{schedule:Schedule[]}){
                 return setCurrentIndex(currentIndex-3);
         }
     }
-    console.log(schedule);
     return (
-        <div className={styles.scheduleContainer}>
-            <BsFillArrowRightCircleFill onClick={handleIconClick("previous")} className={styles.icon}/>
-            { Children.toArray(schedule.slice(0,schedule.length).slice(currentIndex,daysCount+currentIndex).map(day=><motion.div key={day.date} variants={variants} initial="hidden" animate="enter" exit="exit" transition={{type:"linear"}}><Day firstDay={day.date===schedule[0].date} {...day} handleClick={handleClick} showedTimes={showedTimes}/></motion.div>)) }
-            <BsFillArrowLeftCircleFill onClick={handleIconClick("next")} className={styles.icon}/>
-        </div>
+        <>
+            <div className={styles.scheduleContainer}>
+                <BsFillArrowRightCircleFill onClick={handleIconClick("previous")} className={styles.icon}/>
+                { Children.toArray(schedule.slice(0,schedule.length).slice(currentIndex,daysCount+currentIndex).map(day=><motion.div key={day.date} variants={variants} initial="hidden" animate="enter" exit="exit" transition={{type:"linear"}}><Day firstDay={day.date===schedule[0].date} {...day} handleClick={handleClick} showedTimes={showedTimes}/></motion.div>)) }
+                <BsFillArrowLeftCircleFill onClick={handleIconClick("next")} className={styles.icon}/>
+            </div>
+            <div className={styles.singleDayWrapper}>
+            <Day firstDay={true} {...schedule[0]} handleClick={handleClick} showedTimes={showedTimes} />
+            </div>
+        </>
     );
 }
 
