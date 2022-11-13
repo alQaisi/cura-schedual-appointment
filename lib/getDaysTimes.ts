@@ -18,9 +18,6 @@ export function getDaysTimes(schedule:Schedule):getDaysTimesReturnedData{
         availableHours[index].times=availableHours[index].times.filter(hour=>currentDay==date?checkHour(hour):true)
     });
     const unavailableHours=unavailable.map(item=>calculateTime(item,"unavailable"));
-    unavailableHours.forEach((item,index)=>{
-        unavailableHours[index].times=unavailableHours[index].times.filter(hour=>currentDay==date?true:checkHour(hour))
-    });
     return {
         day,
         date,
