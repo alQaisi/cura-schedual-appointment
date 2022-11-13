@@ -26,7 +26,6 @@ function ScheduleComponent({schedule}:{schedule:Schedule[]}){
         return function(){
             if(direction==="next"){
                 if(currentIndex<schedule.length-daysCount-1){
-                console.log(currentIndex,schedule.length-1);
                 return setCurrentIndex(currentIndex+3);
                 }
             }
