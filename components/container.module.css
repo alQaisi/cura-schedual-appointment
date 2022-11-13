@@ -18,6 +18,10 @@
 .img{
     border-radius: 50%;
 }
+.doctorWrapper{
+    display: flex;
+    gap: 0 25px;
+}
 .info{
     
 }
@@ -123,4 +127,29 @@
 .icon:hover{
     color: white;
     background-color: royalblue;
+}
+.today,.todayButton{
+    background-color: rgb(7, 64, 102) !important;
+}
+.today+.timesContainer .time:hover{
+    color: rgb(7, 64, 102) !important;
+}
+@media screen and (max-width:850px) {
+    .doctorWrapper{
+        flex-direction: column;
+    }
+    .card{
+        padding: 25px 25px;
+        align-items: center;
+    }
+}
+@media screen and (max-width:700px) {
+    .doctorWrapper{
+        flex-direction: column;
+    }
+    .card{
+        padding: 25px 25px;
+        align-items: center;
+        /* flex-direction: column; */
+    }
 }

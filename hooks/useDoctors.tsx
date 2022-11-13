@@ -17,6 +17,5 @@ export function useDoctors(doctorsCount:number):Doctor[] | []{
         if(doctors.length<doctorsCount)
             getDoctors();
     },[doctorsCount,doctors]);
-    console.log(doctors);
     return doctorsCount==doctors.length?doctors:[];
 }
